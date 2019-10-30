@@ -1,0 +1,3 @@
+public class PESEL {
+    //AQUI VAN LAS OPERACIONES DE PESEL
+}
