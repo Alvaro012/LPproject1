@@ -12,7 +12,8 @@ public class Main {
         }
         PESEL pesel = new PESEL(input);
         if (pesel.peselOperation(input))
-            System.out.println("mu bn");
+            System.out.println("PESEL number correct");
+        else System.out.println("PESEL number incorrect");
     }
 
 }

@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class PESEL {
     public PESEL(String input) {
         peselOperation(input);
@@ -5,9 +7,12 @@ public class PESEL {
 
     //AQUI VAN LAS OPERACIONES DE PESEL
     public boolean peselOperation(String input) {
-        if (input.equals("Hola")) {
-            return true;
-        } else
-            return false;
+        String[] splited = input.split("");
+        int[] newDigits = new int[input.length()];
+        for(int i = 0;i<input.length();i++){
+            newDigits[i] = Integer.parseInt(splited[i]);
+        }
+        
+        return true;
     }
 }
