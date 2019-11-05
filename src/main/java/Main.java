@@ -1,8 +1,9 @@
+import java.io.IOException;
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(final String... args) {
+    public static void main(final String... args) throws IOException {
         System.out.println("Insert the PESEL number: ");
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
@@ -11,8 +12,9 @@ public class Main {
             System.out.println("PESEL number incorrect");
             input = in.nextLine();
         }
-        if (pesel.peselOperation(input))
+        if (pesel.peselOperation(input)) {
             System.out.println("PESEL number correct");
+            pesel.writePesel();
+        }
     }
-
 }
