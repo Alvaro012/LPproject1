@@ -6,7 +6,10 @@ import java.util.Stack;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+
 public class PESEL {
+
+
     public PESEL(String input) {
     }
 
@@ -42,26 +45,7 @@ public class PESEL {
         File targetFile = new File("C:/Users/Alvaro/IdeaProjects/LPproject1/WriteFile.txt");
         OutputStream outStream = new FileOutputStream(targetFile);
         outStream.write(buffer);
+
     }
 }
-/*
-    PESEL pesel;
-    @Before
-    public void setUp(){
-        logger.info("Running test code");
-        pesel = new PESEL();
-    }
-    @Test
-    public void peselOperationTest(){
 
-    }
-    @Test
-    public void WritePeselTest(){
-        InputStream initialStream = new FileInputStream(new File("C:/Users/Alvaro/IdeaProjects/LPproject1/ReadFile.txt"));
-        File targetFile = new File("C:/Users/Alvaro/IdeaProjects/LPproject1/WriteFile.txt");
-        OutputStream outStream = new FileOutputStream(targetFile);
-        pesel.writePesel();
-        assertEquals(initialStream,targetFile);
-    }
-
- */
