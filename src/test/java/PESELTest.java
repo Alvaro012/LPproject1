@@ -1,10 +1,14 @@
-import org.junit.Before
-import org.junit.Test
+import org.junit.Before;
+import org.junit.Test;
+import java.io.*;
+import org.apache.log4j.Logger;
+import static org.junit.Assert.*;
 
-class PESELTest  {
+public class PESELTest {
     PESEL pesel;
     @Before
     public void setUp(){
+        final Logger logger = Logger.getLogger(PESEL.class);
         logger.info("Running test code");
         pesel = new PESEL();
     }
@@ -13,14 +17,7 @@ class PESELTest  {
 
     }
     @Test
-    public void WritePeselTest(){
-       /* InputStream initialStream = new FileInputStream(new File("C:/Users/Alvaro/IdeaProjects/LPproject1/ReadFile.txt"));
-        byte[] buffer = new byte[initialStream.available()];
-        initialStream.read(buffer);
-        File targetFile = new File("C:/Users/Alvaro/IdeaProjects/LPproject1/WriteFile.txt");
-        OutputStream outStream = new FileOutputStream(targetFile);
-        outStream.write(buffer);
-        */
+    public void WritePeselTest() throws IOException {
         InputStream initialStream = new FileInputStream(new File("C:/Users/Alvaro/IdeaProjects/LPproject1/ReadFile.txt"));
         File targetFile = new File("C:/Users/Alvaro/IdeaProjects/LPproject1/WriteFile.txt");
         OutputStream outStream = new FileOutputStream(targetFile);

@@ -2,14 +2,17 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class PESEL {
     public PESEL(String input) {
-        peselOperation(input);
     }
 
+    public PESEL() {
+
+    }
 
     public boolean peselOperation(String input) {
         String[] splitted = Arrays.stream(input.split(""))
@@ -25,7 +28,9 @@ public class PESEL {
             newDigits.add(i, Integer.parseInt(splitted[i]));
         }
         int check = (9* newDigits.get(0) + 7* newDigits.get(1) + 3* newDigits.get(2) + 1* newDigits.get(3) + 9* newDigits.get(4) + 7* newDigits.get(5) + 3* newDigits.get(6) + 1* newDigits.get(7) + 9* newDigits.get(8) + 7* newDigits.get(9));
-        if((check % 10) != newDigits.get(10))
+        Stack<Integer> checkNumber = new Stack<Integer>();
+        checkNumber.push(check);
+        if((checkNumber.peek() % 10) != newDigits.get(10))
             return false;
         else
          return true;
@@ -39,3 +44,24 @@ public class PESEL {
         outStream.write(buffer);
     }
 }
+/*
+    PESEL pesel;
+    @Before
+    public void setUp(){
+        logger.info("Running test code");
+        pesel = new PESEL();
+    }
+    @Test
+    public void peselOperationTest(){
+
+    }
+    @Test
+    public void WritePeselTest(){
+        InputStream initialStream = new FileInputStream(new File("C:/Users/Alvaro/IdeaProjects/LPproject1/ReadFile.txt"));
+        File targetFile = new File("C:/Users/Alvaro/IdeaProjects/LPproject1/WriteFile.txt");
+        OutputStream outStream = new FileOutputStream(targetFile);
+        pesel.writePesel();
+        assertEquals(initialStream,targetFile);
+    }
+
+ */
